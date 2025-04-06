@@ -1,0 +1,158 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recommendations for User_C1001</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f4f4f4;
+                color: #4CAF50;
+            }
+            h1 {
+                text-align: center;
+                color: #4CAF50;
+            }
+            .user-profile, .recommendations-table {
+                background-color: white;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            table {
+                width: 80%;
+                margin: 20px auto;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border: 1px solid #ddd;
+            }
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            tr:hover {
+                background-color: #ddd;
+            }
+            .recommended-badge {
+                background-color: #ff4444;
+                color: white;
+                padding: 2px 6px;
+                border-radius: 3px;
+                font-size: 0.8em;
+            }
+            canvas {
+                max-width: 600px;
+                margin: 20px auto;
+                display: block;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <h1>Recommendations for User_C1001 (ID: C1001)</h1>
+        <div class="user-profile">
+            <h2>User Profile</h2>
+            <table>
+                <tr><th>Customer ID</th><td>C1001</td></tr>
+                <tr><th>Age</th><td>27</td></tr>
+                <tr><th>Gender</th><td>Male</td></tr>
+                <tr><th>Location</th><td>Delhi</td></tr>
+                <tr><th>Browsing History</th><td>Books, Fitness, Fashion</td></tr>
+                <tr><th>Purchase History</th><td>Biography, Resistance Bands, T-shirt</td></tr>
+                <tr><th>Customer Segment</th><td>Occasional Shopper</td></tr>
+                <tr><th>Avg Order Value</th><td>$795.03</td></tr>
+                <tr><th>Holiday</th><td>Yes</td></tr>
+                <tr><th>Season</th><td>Autumn</td></tr>
+            </table>
+        </div>
+        <canvas id="interestChart"></canvas>
+        <div class="recommendations-table">
+            <h2>Recommended Products</h2>
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Product ID</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                </tr>
+    
+            <tr>
+                <td>1</td>
+                <td>2019</td>
+                <td>Brand C Comics in Books <span class="recommended-badge">Recommended for You</span></td>
+                <td>$878</td>
+                <td>4.8</td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td>2043</td>
+                <td>Brand B T-shirt in Fashion <span class="recommended-badge">Recommended for You</span></td>
+                <td>$1287</td>
+                <td>4.3</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td>2083</td>
+                <td>Brand B Jacket in Fashion <span class="recommended-badge">Recommended for You</span></td>
+                <td>$1099</td>
+                <td>4.8</td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td>2097</td>
+                <td>Brand D T-shirt in Fashion <span class="recommended-badge">Recommended for You</span></td>
+                <td>$1068</td>
+                <td>4.2</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td>2277</td>
+                <td>Brand A Jacket in Fashion <span class="recommended-badge">Recommended for You</span></td>
+                <td>$1167</td>
+                <td>5.0</td>
+            </tr>
+        
+            </table>
+            <p style="text-align: center;">Stored in SQLite Database for future use.</p>
+        </div>
+        <script>
+            const ctx = document.getElementById('interestChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Biography', 'Resistance Bands', 'T-shirt', 'Books', 'Fitness'],
+                    datasets: [{
+                        label: 'Interest Frequency',
+                        data: [1, 1, 1, 1, 1],
+                        backgroundColor: 'rgba(76, 175, 80, 0.6)',
+                        borderColor: 'rgba(76, 175, 80, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+    
