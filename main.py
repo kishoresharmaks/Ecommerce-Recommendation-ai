@@ -7,7 +7,7 @@ from utils import load_data, preprocess_data, evaluate_recommendations
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 from collections import Counter
-import ast 
+import ast
 
 # Initialize SQLite database
 def init_database():
@@ -71,7 +71,7 @@ def main():
     product_data = preprocess_data(product_data)
 
     # Ensure all required columns are present
-    required_customer_cols = ['Customer_ID', 'Age', 'Gender', 'Location', 'Browsing_History', 
+    required_customer_cols = ['Customer_ID', 'Age', 'Gender', 'Location', 'Browsing_History',
                              'Purchase_History', 'Customer_Segment', 'Avg_Order_Value', 'Holiday', 'Season']
     missing_cols = [col for col in required_customer_cols if col not in customer_data.columns]
     if missing_cols:
@@ -103,8 +103,8 @@ def main():
     # Replace the RecommendationAgent instantiation in main()
     rec_agent = RecommendationAgent(user_profiles, product_features, customer_ids, product_data, customer_data)
 
-    user_id = 'C1001'
-    top_k = 5
+    user_id = 'C1140'
+    top_k = 6
     recommendations = rec_agent.get_recommendations(user_id, top_k)
 
     print(f"Recommendations: {recommendations}")
